@@ -1,0 +1,98 @@
+# Student Notes Sharing Platform
+notes = []
+while True:
+    print("\n===== STUDENT NOTES SHARING PLATFORM =====")
+    print("1. Add Notes")
+    print("2. View All Notes")
+    print("3. Search Notes")
+    print("4. Exit")
+    choice = input("Enter your choice: ")
+    if choice == "1":
+        subject = input("Enter subject: ")
+        title = input("Enter notes title: ")
+        student = input("Enter student name: ")
+        notes.append([subject, title, student])
+        print("Notes added successfully!")
+    elif choice == "2":
+        print("\n--- Available Notes ---")
+        if len(notes) == 0:
+            print("No notes available.")
+        else:
+            for i, note in enumerate(notes, 1):
+                print("Note", i)
+                print("Subject:", note[0])
+                print("Title:", note[1])
+                print("Shared by:", note[2])
+                print()
+    elif choice == "3":
+        subject = input("Enter subject to search: ")
+        found = False
+        for note in notes:
+            if note[0].lower() == subject.lower():
+                print("\nNotes Found!")
+                print("Subject:", note[0])
+                print("Title:", note[1])
+                print("Shared by:", note[2])
+                found = True
+        if not found:
+            print("No notes found for this subject.")
+    elif choice == "4":
+        print("Thank you for using Student Notes Sharing Platform!")
+        break
+    else:
+        print("Invalid choice! Please try again.")
+
+OUTPUT:
+===== STUDENT NOTES SHARING PLATFORM =====
+1. Add Notes
+2. View All Notes
+3. Search Notes
+4. Exit
+Enter your choice: 1
+Enter subject: PYTHON
+Enter notes title: PYTHON BASICS
+Enter student name: maha
+Notes added successfully!
+===== STUDENT NOTES SHARING PLATFORM =====
+1. Add Notes
+2. View All Notes
+3. Search Notes
+4. Exit
+Enter your choice: 1
+Enter subject: DBMS
+Enter notes title: SQL commands
+Enter student name: rani
+Notes added successfully!
+===== STUDENT NOTES SHARING PLATFORM =====
+1. Add Notes
+2. View All Notes
+3. Search Notes
+4. Exit
+Enter your choice: 2
+--- Available Notes ---
+Note 1
+Subject: PYTHON
+Title: PYTHON BASICS
+Shared by: maha
+Note 2
+Subject: DBMS
+Title: SQL commands
+Shared by: rani
+===== STUDENT NOTES SHARING PLATFORM =====
+1. Add Notes
+2. View All Notes
+3. Search Notes
+4. Exit
+Enter your choice: 3
+Enter subject to search: python
+Notes Found!
+Subject: PYTHON
+Title: PYTHON BASICS
+Shared by: maha
+===== STUDENT NOTES SHARING PLATFORM =====
+1. Add Notes
+2. View All Notes
+3. Search Notes
+4. Exit
+Enter your choice: 4
+Thank you for using Student No
